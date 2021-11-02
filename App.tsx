@@ -1,11 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
-import CartScreen from './src/screens/CartScreen';
-import ProfileScreen from './src/screens/ProfileScreen/index';
+import { StyleSheet, View } from 'react-native';;
 import Router from './src/router';
 
-export default function App() {
+import Amplify from 'aws-amplify'
+import {withAuthenticator} from 'aws-amplify-react-native';
+import config from './src/aws-exports'
+Amplify.configure(config)
+
+
+const App = () => {
   return (
     <View style={styles.container}>
       <Router />
@@ -18,3 +21,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+
+export default  withAuthenticator(App);
