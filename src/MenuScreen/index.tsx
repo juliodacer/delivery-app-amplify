@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import {Auth} from 'aws-amplify'
-import Button from '../../components/Button'
+import Button from '../components/Button'; 
 
 const MenuScreen = () => {
    const onLogout = () => {
